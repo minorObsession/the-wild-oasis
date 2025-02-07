@@ -12,7 +12,6 @@ export function useLogin() {
     mutationFn: ({ email, password }) => loginAPI({ email, password }),
     onSuccess: (user) => {
       // ! caching the user so it doesn't get re-fetched
-      console.log(user);
       queryClient.setQueryData(["user"], user.data.user);
       navigate("/dashboard", { replace: true });
     },

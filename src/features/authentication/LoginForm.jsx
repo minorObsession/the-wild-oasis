@@ -13,12 +13,26 @@ function LoginForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-
     if (!email || !password) return;
 
-    // * adding options to mutate (login) fn
     login(
       { email, password },
+      {
+        onSettled: () => {
+          setEmail("");
+          setPassword("");
+        },
+      }
+    );
+  }
+
+  function handleDemoLogin() {
+    setEmail("terzicbogdan95@gmail.com");
+    setPassword("madafaka");
+
+    // Auto-submit after filling (optional)
+    login(
+      { email: "terzicbogdan95@gmail.com", password: "madafaka" },
       {
         onSettled: () => {
           setEmail("");
@@ -34,7 +48,6 @@ function LoginForm() {
         <Input
           type="email"
           id="email"
-          // ! This makes this form better for password managers
           autoComplete="username"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -45,7 +58,6 @@ function LoginForm() {
         <Input
           type="password"
           id="password"
-          // ! This makes this form better for password managers
           autoComplete="current-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -56,6 +68,14 @@ function LoginForm() {
       <FormRowVertical>
         <Button size="large" disabled={isLoggingIn}>
           {isLoggingIn ? <SpinnerMini /> : "Log In"}
+        </Button>
+        <Button
+          type="button"
+          size="large"
+          onClick={handleDemoLogin}
+          disabled={isLoggingIn}
+        >
+          {isLoggingIn ? <SpinnerMini /> : "Demo Login"}
         </Button>
       </FormRowVertical>
     </Form>
