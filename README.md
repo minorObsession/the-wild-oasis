@@ -6,7 +6,7 @@ The Wild Oasis is a hotel management web application designed to streamline cabi
 
 ## 🌐 Live Demo
 
-Check out the live admin panel: **[The Wild Oasis - Admin](#)**
+Check out the live admin panel: **[[The Wild Oasis - Admin](https://the-wild-oasis-rho-bay.vercel.app/)]**
 
 ---
 
@@ -15,7 +15,7 @@ Check out the live admin panel: **[The Wild Oasis - Admin](#)**
 A separate customer-facing version allows guests to browse available cabins, manage their bookings, and update their profiles.
 
 - **Repository:** [View on GitHub](#)
-- **Live Site:** [Visit Here](#)
+- **Live Site:** [[Visit Here](https://the-wild-oasis-rho-bay.vercel.app/)](#)
 
 ---
 
